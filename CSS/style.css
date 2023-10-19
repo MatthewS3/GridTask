@@ -1,0 +1,77 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary: rgb(255, 0, 0);
+    --secondary: hsl(0, 13%, 6%);
+    --alternative: rgba(119, 195, 180, 0.8);
+    --awesomeColor: rgb(162, 255, 0);
+    --otherColor: #8f758f;
+}
+body {
+    text-align: center;
+}
+.container {
+    width: 600px;
+    margin-block: 10px;
+    margin-inline: auto;
+    border: 5px solid;    
+    background-color: var(--alternative);
+    position: relative;
+}
+.container::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-image: linear-gradient(to right, green, yellow);
+}
+.container :is(h2) {
+    background-color: #000000;
+    color: rgba(119, 195, 180, 0.8);
+}
+.item {
+    width: 4rem;
+}
+.item > img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.container :is(#example1, 
+#example2, #example3, 
+#example4, #example5) {
+    display: grid;
+    container-name: toFlex;
+    container-type: flex;
+}
+#example2 {
+    grid-template-rows: repeat(3, 1fr);
+    display: grid;
+    container-type: flex;
+}
+#example3 {
+    grid-template-rows: repeat(3, 1fr);
+    display: grid;
+    container-type: flex;
+}
+#example4 {
+    grid-template-rows: repeat(3, 1fr);
+    display: grid;
+    container-type: flex;
+}
+#example5 {
+    grid-template-rows: repeat(3, 1fr);
+    display: grid;
+    container-type: flex;
+}
+
+@media screen and (width < 900px) {
+    .container {
+        width: 100%;
+    }
+}
